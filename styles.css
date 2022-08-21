@@ -1,0 +1,25 @@
+h1 {
+    background-color: aquamarine;
+    color: blue;
+}
+
+h2 {
+    background-color: cadetblue;
+    color: rgb(180, 53, 53);
+}
+
+h3 {
+    color: mediumblue;
+}
+
+.olBackground {
+    background-color: coral;
+}
+
+.ulBackground {
+    background-color: darksalmon;
+}
+
+.sectionBackground {
+    background-color:aqua
+}
