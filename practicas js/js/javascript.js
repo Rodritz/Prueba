@@ -25,7 +25,7 @@ function calcularValores(nota1,nota2,nota3) {
 
     notas[0] = +nota1;
     notas[1] = parseInt(nota2);
-    notas[3] = parseInt(nota3);  
+    notas[2] = parseInt(nota3);  
 
 
     let menor = notas[0];
@@ -46,6 +46,10 @@ function calcularValores(nota1,nota2,nota3) {
     }
 
     promedio = suma / notas.length;
+
+    console.log(menor);
+    console.log(mayor);
+    console.log(promedio);
 
     actualizar('menor', menor); 
     actualizar('mayor', mayor);     
