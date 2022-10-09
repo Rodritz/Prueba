@@ -1,18 +1,33 @@
 const btnAdd1 = document.getElementById('btnAdd1');
+const btnBorrar1 = document.getElementById('btnBorrar1');
+const borrarLista = document.getElementById('borrarLista');
 
 const comestibles = [];
 
 btnAdd1.addEventListener('click', addComestible);
+btnBorrar1.addEventListener('click', borrar1);
+borrarLista.addEventListener('click', eliminarLista);
 
 function addComestible() {
     const comestible = document.getElementById('comestible').value;
 
-    addToList(comestible);
+    const isValid = validacion(comestible);
 
-    renderComestibleByDom();
+    if(!isValid){
+        alert('debe completar el campo');
+        return;
+    }
+
+    addToList1(comestible);
+
+    renderComestibleByDom();   
 }
 
-function addToList(comestible) {
+function validacion(comestible){
+    return comestible !=='';
+}
+
+function addToList1(comestible) {
     comestibles.push(comestible);
 }
 
@@ -29,25 +44,51 @@ function renderComestibleByDom(){
         li1.innerHTML = comestible;
         li1.id = Math.random();
         ul1.appendChild(li1);
-    }
+    }    
+    
 }
-///////////////////////
+
+function borrar1(){
+    document.getElementById('comestible').value ='';
+    //document.getElementById('articulo').value ='';
+}
+
+function eliminarLista(){
+    document.getElementById('comestibles').innerHTML ='';
+    li1.innerHTML = '';
+}
+
+
+///////////////////////////////////////////////
 
 const btnAdd2 = document.getElementById('btnAdd2');
+const btnBorrar2 = document.getElementById('btnBorrar2');
 
 const articulos = [];
 
 btnAdd2.addEventListener('click', addArticulo);
+btnBorrar2.addEventListener('click', borrar2);
 
 function addArticulo(){
     const articulo = document.getElementById('articulo').value;
+
+    const isValid = validacion(articulo);
+
+    if(!isValid){
+        alert('debe completar el campo');
+        return;
+    }
     
-    addToList(articulo);
+    addToList2(articulo);
 
     renderArticuloByDom();
 }
 
-function addToList(articulo){
+function validacion(articulo){
+    return articulo !=='';
+}
+
+function addToList2(articulo){
     articulos.push(articulo);
 }
 
@@ -65,4 +106,8 @@ function renderArticuloByDom(){
         li2.id = Math.random();
         ul2.appendChild(li2);
     }
+}
+function borrar2(){
+    //document.getElementById('comestible').value ='';
+    document.getElementById('articulo').value ='';
 }
