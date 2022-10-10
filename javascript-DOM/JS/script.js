@@ -57,6 +57,17 @@ function borrar1(){
 function eliminarLista(){
     const list1 = document.getElementById('comestibles');
     ul1.remove(list1);
+    //---------------
+    //const li1 = document.createElement('li');
+    //li1.remove(ul1);
+    //li1.innerHTML = '';
+    //--------------
+    //const comestibles = [];
+    //list1.remove(comestibles);
+    //----------------
+    //const comestible = document.getElementById('comestible').value;
+    //comestible.innerHTML = '';
+
     }
 
 
