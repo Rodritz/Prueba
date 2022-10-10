@@ -53,10 +53,11 @@ function borrar1(){
     //document.getElementById('articulo').value ='';
 }
 
+//esta funcion me trae de vuelta la lista , no esta funcionando correctamente
 function eliminarLista(){
-    document.getElementById('comestibles').innerHTML ='';
-    li1.innerHTML = '';
-}
+    const list1 = document.getElementById('comestibles');
+    ul1.remove(list1);
+    }
 
 
 ///////////////////////////////////////////////
