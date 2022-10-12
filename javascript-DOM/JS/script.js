@@ -1,12 +1,13 @@
 const btnAdd1 = document.getElementById('btnAdd1');
 const btnBorrar1 = document.getElementById('btnBorrar1');
-const borrarLista = document.getElementById('borrarLista');
+
+document.getElementById('borrarLista').addEventListener('click', eliminarLista);
+
 
 const comestibles = [];
 
 btnAdd1.addEventListener('click', addComestible);
 btnBorrar1.addEventListener('click', borrar1);
-borrarLista.addEventListener('click', eliminarLista);
 
 function addComestible() {
     const comestible = document.getElementById('comestible').value;
@@ -53,28 +54,24 @@ function borrar1(){
     //document.getElementById('articulo').value ='';
 }
 
-//esta funcion me trae de vuelta la lista , no esta funcionando correctamente
-function eliminarLista(){
-    const list1 = document.getElementById('comestibles');
-    ul1.remove(list1);
-    //---------------
-    //const li1 = document.createElement('li');
-    //li1.remove(ul1);
-    //li1.innerHTML = '';
-    //--------------
-    //const comestibles = [];
-    //list1.remove(comestibles);
-    //----------------
-    //const comestible = document.getElementById('comestible').value;
-    //comestible.innerHTML = '';
+function eliminarLista (){
+    clearList ();
 
-    }
+    document.getElementById('comestibles').innerHTML='';
+}
+
+function clearList (){
+    while(comestibles.length>0){
+        comestibles.pop();
+    }    
+}
 
 
 ///////////////////////////////////////////////
 
 const btnAdd2 = document.getElementById('btnAdd2');
 const btnBorrar2 = document.getElementById('btnBorrar2');
+document.getElementById('borrarLista2').addEventListener('click', eliminarLista2)
 
 const articulos = [];
 
@@ -122,4 +119,15 @@ function renderArticuloByDom(){
 function borrar2(){
     //document.getElementById('comestible').value ='';
     document.getElementById('articulo').value ='';
+}
+
+function eliminarLista2 () {
+    clearList2 ();
+    document.getElementById('articulos').innerHTML = '';
+}
+
+function clearList2(){
+    while(articulos.length>0){
+        articulos.pop();
+    }
 }
